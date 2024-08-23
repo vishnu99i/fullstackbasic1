@@ -10,8 +10,8 @@ dotenv.config({path: "./.env"});
 //    res.send("Server is ready")
 // });
 
-//Get a list of 5 jokes
-app.get("/api/jokes",(req,res) => {
+//Get a list of 5 jokes (/api/jokes)
+app.get("/jokes",(req,res) => {
    const jokes = [
       {
          id: 1,
@@ -47,3 +47,5 @@ const port = process.env.PORT;
 app.listen(port,() => {
    console.log(`Serve at http://localhost:${port}`);
 })
+
+module.exports = app;
