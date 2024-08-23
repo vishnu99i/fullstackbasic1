@@ -1,6 +1,9 @@
 import express from "express";
+import dotenv from "dotenv";
 
 const app = express();
+
+dotenv.config({path: "./.env"});
 
 //Basic server
 // app.get("/",(req,res) => {
@@ -39,7 +42,7 @@ app.get("/api/jokes",(req,res) => {
    res.send(jokes);
 });
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT;
 
 app.listen(port,() => {
    console.log(`Serve at http://localhost:${port}`);
